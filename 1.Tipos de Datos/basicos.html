@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javacript</title>
+</head>
+<body>
+    <h1>Fundamentos Javascript</h1>
+
+    <script>
+         
+        //Ambito global
+        var hola = "Hola mundo";
+        //Ambito bloque
+        let hello = "Hello World";
+    
+
+        console.log(hola);
+        console.log(hello);
+        //Ambito de bloque (lo que esta separado por un juego de llaves)
+        var musica = "Rock";
+
+        console.log("Variable Música antes del Bloque", musica);
+
+        {
+            var musica = "Pop";
+            console.log("Variable Música dentro del bloque", musica)
+        }
+    </script>
+</body>
+</html>
