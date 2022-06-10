@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+
+</head>
+<body>
+    
+
+
+    <script>
+        //Cadenas de Texto aka Strings
+        let nombre = "Ileana";
+        let apellido = "Chamorro";
+
+        //Declaración con constructor 
+        let saludo = new String("Hola mundo");
+
+        let lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolores, ipsum sed saepe doloribus ratione ea neque dolore, obcaecati laboriosam impedit odit molestias accusamus ullam a, delectus excepturi cupiditate perspiciatis!";
+        console.log(nombre, apellido, saludo);
+        console.log(
+            nombre.length,
+            apellido.length,
+            saludo.length,
+            nombre.toUpperCase(),
+            apellido.toLowerCase(),
+            lorem.includes("amet"),
+            lorem.includes("ileana"),
+            lorem,
+            lorem.trim(),
+            lorem.split(" "),
+            lorem.split(" , "),
+        )
+    </script>
+</body>
+</html>

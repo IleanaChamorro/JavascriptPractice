@@ -20,6 +20,7 @@
         console.log(hola);
         console.log(hello);
         //Ambito de bloque (lo que esta separado por un juego de llaves)
+        console.log('********var*******')
         var musica = "Rock";
 
         console.log("Variable Música antes del Bloque", musica);
@@ -28,6 +29,19 @@
             var musica = "Pop";
             console.log("Variable Música dentro del bloque", musica)
         }
+
+        console.log("Variable Música dentro del bloque", musica)
+
+        console.log('********let*******')
+        let  musica2 = "Rock";
+
+        console.log("Variable Música antes del Bloque", musica2);
+        {
+            let musica2 = "Pop";
+            console.log("Variable Música dentro del bloque", musica2)
+        }
+
+        console.log("Variable Música dentro del bloque", musica2)
     </script>
 </body>
 </html>
