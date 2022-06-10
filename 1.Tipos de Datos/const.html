@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Fundamentos Javascript</h1>
+
+
+
+
+    <script>
+
+        //Las constantes no pueden ser declaradas vacías
+        let a;  //let Permite declarar variable vacía
+        //const nueve; Error
+
+        //Constantes -> Variables que no cambian su valor
+        const PI = 3.1416;
+        //PI = 3.15;
+        console.log(PI);
+
+
+        a = "kenai";
+        console.log(a);
+
+        //Objeto -> Conjunto de atributos con su respectivo valor
+        const objeto = {
+            nombre: "Bart",
+            edad: 12
+        }
+
+        //Arreglo -> Colección de datos
+        const colores = ['rojo', 'verde', 'amarrillo', 'azul'];
+
+        console.log(objeto);
+        console.log(colores);
+
+
+        //Agregar propiedades al objeto
+        objeto.apellido = 'simpsons';
+        colores.push("gris");
+
+        console.log(objeto);
+        console.log(colores);
+
+
+        /*
+        NOTA: 
+        Si se declara valores primitivos con "const", no se puede cambiar el valor de la variable
+
+
+        Si definis objetos o arreglos (valores compuestos) si se puede agregar o quitar elementos 
+        */
+    </script>
+</body>
+</html>
