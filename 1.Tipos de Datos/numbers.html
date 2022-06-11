@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>
+        Fundamentos Javascript
+    </h1>
+
+
+    <script>
+        //Numeros
+        let a = 2;
+
+        //Número declarado con su constructor, valor primitivo de la variable (1)
+        let b = new Number(1);
+
+        let c = 7.19;
+
+        let d = "5.6";
+
+        console.log(a);
+
+        //Método toFixed dice cuántos números decimales tiene un valor númerico
+        console.log(c.toFixed(1));
+
+        //Método parseInt devuelve solo la parte entera
+        console.log(parseInt(c));
+
+        //Método parseFloat devuelve ambas partes flotante y entera
+        console.log(parseFloat(c));
+
+        console.log(typeof(d));
+
+        console.log(a + b);
+
+        //Cómo el d es string no se puede hacer la suma, se concatena
+        console.log(a + d); // 25.6
+
+        //Para poder sumarlos, hay que hacer una conversión de string a number
+        console.log(c + parseInt(d));
+
+        console.log(c + parseFloat(d));
+    </script>
+</body>
+</html>
