@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Fundamentos Javascript</h1>
+
+    
+    
+    <script>
+        //Caracteristicas cadenas de texto
+        let nombre = "Ile";
+        let apellido = "Chamorro";
+
+        //Concatenación (Unir cadena de texto con una variable(generalmente de tipo string) )
+        
+        let saludo = "Hola mi nombre es " + nombre + ' ' + apellido
+
+        console.log(saludo)
+
+        //Interpolación de variables
+        //(Meter dentro de una cadena de texto el valor dinamicamente de una variable)
+
+
+        //Template strings
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}` 
+        console.log(saludo2)
+        let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>"
+
+
+        console.log(ul)
+
+        //Template strings
+        let ul2 = `
+        <ul>
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otoño</li>
+            <li>Invierno</li>
+        </ul>
+        `;
+        console.log("Lista con template string" + ul2)
+
+        //Concatenar una lista 
+        let ul3 = "<ul>";
+        ul3 += "<li>Primavera</li>"
+        ul3 += "<li>Verano</li>"
+        ul3 += "<li>Otoño</li>"
+        ul3 += "<li>Invierno</li>"
+
+        console.log("Concatenar una lista " + ul3)
+    </script>
+</body>
+</html>
