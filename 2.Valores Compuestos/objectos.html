@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+
+
+    <script>
+    //Objeto -> Colección de llaves valores 
+        //Usar const para objetos para evitar que un nuevo objeto cambie la referencia de este 
+        const b = {};
+        console.log(b);
+
+        //Crear objetos desde su constructor
+        const c = new Object();
+        console.log(c);
+
+        //Los valores de las llave pueden tener cualquier tipo de dato
+
+        //Dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama métodos 
+        const ile = {
+            nombre:  "Ile",
+            apellido: "Chamorro",
+            edad: 18,
+            pasatiempos: ["Hacer ejercicio", "Leer", "Programar"],
+            soltera: true,
+            contacto: {
+                email: "ile@mail.com",
+                celular: "11222333444",
+            },
+            saludar:function(){
+                console.log("Hola :)")
+            },
+            //referencia al objeto mismo (this)
+            decirMiNombre: function(){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años, me puedes contactar por mail ${this.contacto.email}`)
+            }
+        }
+
+        console.log(ile);
+        //Acceder a propiedades dentro del objeto
+        console.log(ile["apellido"]);
+        console.log(ile.pasatiempos[0]);
+        console.log(ile.contacto.celular);
+        ile.decirMiNombre();
+
+        //Método para listar todas las propiedades del objeto
+        console.log(Object.keys(ile));
+
+        //Método para listar los valores del objeto
+        console.log(Object.values(ile));
+
+        //Saber si el objeto tiene propiedades
+        console.log(ile.hasOwnProperty("nombre")); //Si tiene una propiedad nombre (true)
+        
+    </script>
+</body>
+</html>

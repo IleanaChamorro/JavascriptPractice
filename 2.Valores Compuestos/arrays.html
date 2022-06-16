@@ -11,7 +11,55 @@
 
 
     <script>
-        
+        //Arrays -> Colección de elementos 
+
+
+        //Declaración 
+        const a = [];
+        const b = [1, true, "Hola", ["A", "B", "C", [1,2,3]]];
+        console.log(a, b);
+        console.log(b.length);
+
+        //Acceder a los elementos del arreglo
+        console.log(b[3]);
+
+        //Acceder a un array dentro de un array
+        console.log(b[3][2]);
+        console.log(b[3][3][0]);
+
+        //Crear arreglo con array of
+        //Acceder desde su constructor 
+        const c = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(c);
+
+        //Crear arreglo y llenarlo con valor
+        const d = Array(100).fill(false);
+        console.log(d);
+
+        //Crear instancia de array
+        const e = new Array();
+        console.log(e);
+
+        //arreglo a partir de su instancia constructor
+        const f = new Array(1,2,3,4,true,false);
+        console.log(f);
+
+        //Metodos 
+        const colores = ["Azul", "Amarillo", "Blanco"];
+        console.log(colores);
+
+        //Agregar un nuevo elemento
+        colores.push("Negro");
+        console.log(colores);
+
+        //Quitar el último elemento 
+        colores.pop();
+        console.log(colores);
+
+        //Ejecutar una función por cada elemento del array
+        colores.forEach(function(el, index){
+            console.log(el, index);
+        });
     </script>
 </body>
 </html>
