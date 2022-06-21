@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Ciclos / Bucles / Loops</h1>
+
+
+    <script>
+        let contador = 10;
+        //Mientras la condición se cumpla imprimir variable contador
+        
+
+        //Antes de empezar a ejecutar las lineas de codigo que condicionan al while, la condicion se tiene que cumplir 
+        while(contador < 10){
+            console.log("Interación número",contador);
+            contador++;
+        }
+
+
+        //En el caso del "Do while" la primera vez se va a ejecutar todo el bloque dentro del Do, porque la evaluacion de la condicion esta al final. Es decir al menos una vez se va a ejecutar todo el codigo, la segunda iteración solo se ejecutara si dicha condición se cumple 
+        do{
+            console.log("Interación (Do)", contador);
+            contador++;
+        }while(contador<10);
+    </script>
+</body>
+</html>
