@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Destructuración</h1>
+
+
+    <script>
+        //Nueva forma de asignar valores a arreglos y objetos
+
+
+        //destructuración
+        //let {nombre, edad, apellido} = props
+
+        //guardar valores(posiciones) en variables diferentes sin destructuración
+        const numeros = [1,2,3];
+
+        let uno = numeros[0],
+        dos = numeros[1],
+        tres = numeros[2];
+
+
+        console.log(uno, dos, tres);
+
+        /*Guardar valores(posiciones) en variables diferentes con destructuración */
+        const [one, two, three] = numeros;
+
+        console.log(one, two, three);
+    </script>
+</body>
+</html>
