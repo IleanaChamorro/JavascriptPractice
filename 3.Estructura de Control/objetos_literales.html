@@ -4,15 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentos Javascr9't</title>
+    <title>Fundamentos Javascript</title>
 </head>
 <body>
     <h1>Objetos literales</h1>
 
 
     <script>
+        //Objetos literales -> Nueva forma de escribir atributos y metodos también asignarlos
+
+        //Forma de escribir anterior a Objetos literales
+
+        let nombre = "kEnAi",
+            edad = 7;
 
         
+        const perro = {
+            nombre: nombre, 
+            edad: edad,
+            ladrar: function(){
+                console.log("guauuu guauu!!!")
+            }
+        }
+
+        console.log(perro);
+        perro.ladrar()
+
+        const dog = {
+            nombre, 
+            edad,
+            raza: "Callejero",
+            ladrar(){
+                console.log("guauu guauuu!")
+            }
+        }
+
+        console.log(dog)
+        dog.ladrar();
+
+
     </script>
 </body>
 </html>
