@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+
+
+    <script>
+        /*Función expresada se genera cuando a una variable le asignas el valor de una función anonima
+        */
+       const saludo = function(){
+           console.log("Hola");
+       }
+
+       saludo();
+
+
+       /*En una función declarada la invocación puede ser incluso antes de declarar la función*/
+
+       /*saludar();
+
+       function saludar(){
+           console.log("Hola Mundo");
+       }*/
+
+
+       /*Arrow functions - Nueva forma de definir funciones anonimas*/
+
+       const saludos = () => {
+           console.log("Buenos días");
+       }
+
+       saludos();
+
+       //Cuando la función es de una línea se vuelve mas expresivo
+       /*const saludar = () => console.log("Hola");
+       saludar();
+       */
+
+
+       /*recibir parámetros arrow functions
+       const saludar = (nombre) => console.log(`Hola ${nombre}`);
+       saludar("Irma");
+       */
+
+
+       //recibir parámetros de forma expresiva
+       const saludar = nombre => console.log(`Hola ${nombre}`);
+
+       saludar("Ile");
+
+
+       /*
+       Forma 1
+       const sumar = function (a, b){
+           return a + b;
+
+
+        console.log(sumar(8,9));
+       }
+       */
+       //Forma 2 (Expresiva)
+       const sumar = (a,b) => a + b; 
+
+
+       console.log(sumar(9,9));
+
+       const funcionDeVariasLineas = () => {
+           console.log("Uno");
+           console.log("Dos");
+           console.log("Tres");
+       }
+
+
+       funcionDeVariasLineas();
+
+       //Iterar un arreglo
+
+       const numeros = [1,2,3,4,5,6,7,8,9];
+
+
+       /*numeros.forEach(function(el, index){
+           console.log(`El elemento ${el} esta en la posición ${index}`)
+       });
+       */
+
+       //Iterar un arreglo con arrow functions
+    
+       console.log("---------------");
+
+       console.log("Forma 1 iterar arreglos con arrow function")
+       numeros.forEach((el, index) => {
+           console.log(`El elemento ${el} esta en la posición ${index}`)
+       });
+
+       console.log("----------------");
+       console.log("Forma 2 iterar arreglos con arrows functions")
+       numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
+
+       /*Las arrows functions tienen la capacidad de capturar el objeto this del contexto en el que se encuentre*/
+
+
+       /*Como la función existe dentro del contexto del navegador this se convierte en objeto Window(Ventana del navegador)*/
+       function Perro(){
+           console.log(this);
+       }
+
+       Perro();
+
+
+       /*This en este contexto es el Objeto*/
+       /*const perro = {
+           nombre: "Tuca",
+           ladrar: function(){
+               console.log(this)
+           }
+       }
+       perro.ladrar();
+
+       */
+
+
+       /*Al convertir el metodo ladrar a función flecha el objeto "this" vuelve a ser objeto Window*/
+       const perro = {
+           nombre: "Tuca",
+            ladrar:() =>{
+                console.log(this)
+            }
+       }
+
+       perro.ladrar();
+    </script>
+</body>
+</html>
