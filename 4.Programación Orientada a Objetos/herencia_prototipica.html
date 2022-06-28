@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Programación</title>
+</head>
+<body>
+    <h1>Herencia Prototipica</h1>
+
+
+
+    <script>
+         //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+         function Animal(nombre, genero){
+            //Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+
+        //Métodos agregados al prototipo de la función constructora
+        Animal.prototype.sonar = function(){
+            console.log("Hago sonidos por que estoy vivo");
+        }
+
+        Animal.prototype.saludar = function(){
+            console.log(`Hola me llamo ${this.nombre}`)
+        }
+
+
+        //Herencia Prototípica  
+        function Perro(nombre, genero, tamanio){
+            //llama al método constructor del objeto padre
+            this.super = Animal;
+            this.super(nombre, genero);
+            this.tamanio = tamanio;
+
+        }
+        
+        //Asignar al Prototipo Perro para que sea instancia de Animal
+        //Perro está heredando de Animal
+        Perro.prototype = new Animal();
+
+        //Traer todas las características del Prototipo Padre(Animal)
+        Perro.prototype.constructor = Perro;
+
+        //Sobreescritura de métodos del Prototipo padre en el hijo
+        Perro.prototype.sonar = function(){
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+
+        Perro.prototype.ladrar = function(){
+            console.log("Guauu Guaauuuu");
+        }
+
+
+
+        //Instancias del Objeto
+        const snoopy = new Perro("Snoopy", "Macho", "Grande"),
+         lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.ladrar();
+        snoopy.saludar();
+
+
+        lolaBunny.sonar();
+        lolaBunny.saludar();
+    </script>
+</body>
+</html>
