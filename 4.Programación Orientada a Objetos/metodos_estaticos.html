@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Métodos estáticos, getters y setters</h1>
+
+    <script>
+        //Animal es un objeto que hereda del prototipo object 
+    
+    
+        //Las clases al no recibir parámetros, los recibe por el método constructor
+        class Animal{
+            //El constructor es un método especial que se ejecuta en el momento de instanciar la clase 
+            constructor(nombre, genero){
+                //Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+    
+            //Métodos
+            sonar(){
+                console.log("Hago sonidos por que estoy vivo");
+    
+            }
+            saludar(){
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+        }
+    
+        //Herencia
+        class Perro extends Animal{
+            constructor(nombre, genero, tamanio){
+                //con el método super() se manda a llamar el constructor de la clase padre
+                super(nombre, genero);
+                this.tamanio = tamanio;
+                this.raza = null;
+            }
+
+            //Un método estático se pueden ejecutar sin necesidad de instanciar la clase 
+            static queEres(){
+                console.log("Los perros somos animales mamíferos que pertenecemos a la familia de los caninos.Somos considerados los mejores amigos del hombre"
+                );
+            }
+            //Los setters y getters son métodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase 
+            get getRaza(){
+                return this.raza;
+                //Los métodos obtenedores (getters) generalmente retornan el valor de la propiedad en cuestión
+            }
+            set setRaza(raza){
+                this.raza = raza;
+                //método establecedor(setter) que modifique el valor de dicha propiedad
+            }
+        }
+    
+    
+        //Método estático 
+        Perro.queEres();
+        //Instancias
+        const mimi = new Animal("Mimi", "Hembra"),
+         scooby = new Animal("Scooby", "Macho", "Gigante")
+    
+         
+         console.log(mimi);
+         mimi.sonar();
+         mimi.saludar();
+         console.log(scooby);
+         scooby.saludar();
+         scooby.sonar();
+         
+         
+        //Los métodos en JS son utilizados como atributos
+        console.log(scooby.getRaza);
+        scooby.setRaza = "Grán Danés";
+        console.log(scooby.getRaza);
+        </script>
+</body>
+</html>
