@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Javascript</title>
+</head>
+<body>
+    <h1>Objeto console</h1>
+
+    <script>
+        console.log(console);
+        console.error("Esto es un error");
+        console.warn("Esto es un aviso");
+        console.info("Esto es un mensaje informativo");
+        console.log("Un registro de lo que ha pasado en nuestra aplicación");
+
+
+        let nombre = "Ileana",
+        apellido = "Chamorro",
+        edad = 18;
+
+        console.log(nombre);
+        console.log(apellido);
+        console.log(edad);
+        console.log(nombre, apellido, edad);
+        console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años`);
+        console.log(`Hola mi nombre es %s %s y tengo %d años`, nombre, apellido, edad);
+
+        console.clear();
+
+
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.dir(document);
+
+        console.clear();
+
+        //Grupos
+        console.group("Curso hechos");
+        console.log("Curso Django");
+        console.log("Cursos Python");
+        console.log("Cursos React");
+        console.log("Curso de FlexBox");
+        console.log("Curso de diseño y Programación web")
+        console.groupEnd();
+
+        console.clear();
+
+        //Tablas 
+        console.log(console);
+        console.table(Object.entries(console).sort()); 
+
+        //Representar objetos en forma de tabla
+        const numeros = [1,2,3,4,5],
+        vocales = ["a", "e", "i", "o", "u"];
+
+        console.table(numeros);
+        console.table(vocales.sort());
+
+        const perro = {
+            nombre: "Tuca",
+            raza: "Callejero",
+            color: "cafe"
+        }
+
+        console.table(perro);
+        
+        console.clear();
+        
+        //Visualizar tiempo
+        console.time("Cuanto tiempo tarda mi código");
+
+        const arreglo = Array(1000000);
+
+        for(let i = 0;i < arreglo.length; i++){
+            arreglo[i] = i;
+        }
+
+        console.timeEnd("Cuanto tiempo tarda mi código");
+        //console.log(arreglo);
+
+        console.clear();
+        
+        //Contar 
+        for(let i = 0; i <= 100; i++){
+            console.count("codigo for");
+            console.log(i);
+        }
+
+    
+    </script>
+</body>
+</html>
