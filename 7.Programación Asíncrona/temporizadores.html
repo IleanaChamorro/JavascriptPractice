@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asíncronía en Javascript</title>
+</head>
+<body>
+    <h1>Asíncronía en Javascript</h1>
+
+
+
+    <script>
+        //El método setTimeout() permite ejecutar un fragmento de código, una vez transcurrido un tiempo determinado
+
+        console.log("inicio");
+        setTimeout(() => {
+            console.log("Ejecutando un setTimeout,esto se ejecuta una sóla vez");
+        }, 3000);
+
+        //Ejecuta una función o un fragmento de código de forma repetitiva cada vez que termina el periodo de tiempo determinado.
+        /*setInterval(() => {
+            console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo")
+        })
+        */
+       
+        /*let temporizador = setTimeout(() => {
+            console.log(new Date().toLocaleTimeString());
+        }, 1000);
+        */
+
+       //cancelar un timeOut
+       //clearTimeout(temporizador);
+
+       console.log("después del clear");
+
+        let temporizador = setInterval(() => {
+            console.log(new Date().toLocaleTimeString());
+        }, 1000);
+
+        clearInterval(temporizador);
+        console.log("después del clearInterval");
+    </script>
+</body>
+</html>
