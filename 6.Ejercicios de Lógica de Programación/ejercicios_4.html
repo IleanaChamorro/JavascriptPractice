@@ -13,9 +13,77 @@
 
 
     <script>
+        /*12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo) y 1) o no pe.miFuncion(7) devolverá true*/
+
+        const numeroPrimo = (numero = undefined) => {
+            if(numero === undefined) return console.warn("No ingresaste un número");
+
+            if(typeof numero !== "number") return console.error(`El valor "${numero}" ingresado, NO es un número`);
+
+            if(numero === 0) return console.error("El número no puede ser 0");
+
+            if(numero === 1) return console.error("El número no puede ser 1");
+
+            if(Math.sign(numero) === -1) return console.error("El número no puede ser negativo");
+
+            let divisible = false;
 
 
+            for(let i = 2; i < numero; i++){
+                if((numero % i) === 0){
+                    divisible = true;
+                    break;
+                }
+            }
 
+            return(divisible)
+            ? console.log(`El número ${numero}, NO es primo`)
+            : console.log(`El número ${numero}, SI es primo`)
+        }
+
+
+        numeroPrimo(320);
+
+
+        console.log("**************");
+
+
+        /*13) Programa una función que determine si un número es par o impar, pe. miFunción(29) devolverá impar*/
+        const numeroParImpar = (numero = undefined) => {
+            if(numero === undefined) return console.warn("No ingresaste un número");
+
+
+            if(typeof numero !== "number") return console.error(`El valor ${numero} ingresado, NO es un número`);
+
+            return((numero % 2) === 0)
+            ? console.info(`El número ${numero} es Par`)
+            : console.info(`El número ${numero} es impar`)
+        }
+
+
+        numeroParImpar(19);
+
+        console.log("*************");
+
+
+        /*14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe.miFuncion(0, "C") devolvera 32°F*/
+
+        const convertirGrados = (grados = undefined, unidad = undefined) => {
+            if(grados === undefined) return console.warn("No ingresaste grados a convertir");
+
+            if(typeof grados !== "number") return console.error(`El valor "${grados}" ingresado, NO es un número`);
+
+
+            if(unidad === undefined) return console.warn("No ingresaste el tipo de grado a convertir");
+
+            if(typeof unidad !== "string") return console.error(`El "${grados}" ingresados, NO es una cadena de texto`);
+
+
+            if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("Valor de unidad no reconocido");
+        }
+
+
+        convertirGrados(2, "C");
     </script>
 </body>
 </html>
