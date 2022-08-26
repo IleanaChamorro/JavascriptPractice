@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    
+
+
+    <script>
+        function cuadradoCallback(value, callback){
+            setTimeout(() => {
+                //callback a resolver
+                callback(value, value * value);
+            }, 0 | Math.random() * 100);
+        }
+
+        //Función que recibe un valor y como parámetro recibe una callback
+        cuadradoCallback(0, (value, result) => {
+            console.log("Inicia Callback");
+            console.log(`Callback: ${value}, ${result}`);
+
+            //Ejemplo Callback Hell
+            cuadradoCallback(1, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`)
+            });
+            cuadradoCallback(2, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`)
+            });
+            cuadradoCallback(3, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`)
+            });
+            cuadradoCallback(4, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`)
+            });
+            cuadradoCallback(5, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`)
+            });
+        });
+    </script>
+</body>
+</html>
