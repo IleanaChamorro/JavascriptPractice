@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Tipos de datos en Javascript</title>
+</head>
+<body>
+    <h1>Sets</h1>
+
+    <script>
+        /*
+        Estructura Sets
+
+        Este nuevo tipo de dato es una estructura similar a un array pero de datos unicos
+
+        A diferencia del "Symbol" si se utiliza el operador "New"
+        */
+
+        //Crear un set
+        const set = new Set([1,2,3,3,4,5, true, false, false, {}, {}, "hola", "HOla"]);
+        console.log(set);
+
+        //Conocer tamaño del set
+        console.log("Tamaño del set: ",set.size);
+
+        const set2 = new Set();
+        //Agregar elementos al set
+        set2.add(1);
+        set2.add(2);
+        set2.add(2);
+        set2.add(3);
+        set2.add(true);
+        set2.add(false);
+        set2.add(true);
+        set2.add({});
+
+        console.log(set2);
+        console.log("Tamaño del set: ", set2.size);
+
+        console.log("Recorriendo set");
+        //Recorrer un set
+        for(item of set){
+            console.log(item);
+        }
+
+        console.log("Recorriendo set2"); 
+        set2.forEach(item => console.log(item));
+
+        //Volver un objeto en un iterable tipo arreglo
+        let arr = Array.from(set);
+        console.log(arr);
+
+        //Borrar posiciones
+        set.delete("HOla");
+        console.log(set);
+
+        //Comprobar si existe el valor dentro de la colección de datos
+        console.log(set.has("hola")); ````              
+    </script>
+</body>
+</html>
