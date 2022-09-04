@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+</head>
+<body>
+    <h1>Nuevos Tipos de Datos en Javascript</h1>
+
+    <script>
+        /*
+        Symbol es un tipo de dato primitivo como boolean, string, number, null y undefined 
+        
+        Al momento de crear un Symbol su valor se va a mantener privado para uso interno
+
+        Generalmente se suelen agregar como características de objetos
+
+        No podemos utilizar el operador "New"
+
+        Se pueden crear identificadores unicos de referencia
+        */
+
+       /*let id = "hola";*/
+       let id = Symbol("id");
+       let id2 = Symbol("id2");
+
+       console.log(id === id2);
+       console.log(typeof id, typeof id2);
+
+       //Buena practica al nombrar constantes
+       const NOMBRE = Symbol();
+
+       //Otra forma de crear Symbol
+       const persona = {
+           [NOMBRE]: "Ileana",
+           edad: 18
+        };
+
+       console.log(persona);
+
+       persona.NOMBRE = "Ileana Chamorro";
+
+       console.log(persona);
+       //Si quiero mandar a llamar a una propiedad que ha sido declarada con un simbolo
+       console.log(persona[NOMBRE]);
+
+       //Propiedad que haga referencia a un símbolo
+       const SALUDAR = Symbol();
+
+       persona[SALUDAR] = function(){
+           console.log("Hola");
+       }
+
+       console.log(persona);
+       persona[SALUDAR]();
+
+
+       for(let propiedad in persona){
+           console.log(propiedad);
+           console.log(persona[propiedad]);
+       }
+
+       console.log(Object.getOwnPropertySymbols(persona));
+    </script>
+</body>
+</html>
