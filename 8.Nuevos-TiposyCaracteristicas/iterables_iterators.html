@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Tipos y Caracteristicas en Javascript</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            Iteración: Una vuelta en el recorrido de un ciclo
+
+            Cuando hablamos de que una variable o tipo de dato es iterable, significa que es una estructura de datos lineal que hace que sus elementos sean públicos y se puedan recorrer(arreglos, strings, etc).
+
+            Lo que se conoce como Iterador es la interfaz, la cual es una especie de "apuntador", que va recorriendo los elementos y las estructuras 
+
+            Iterable -> Elemento, el cual su contenido se puede recorrer 
+
+            Iterador -> "Apuntador", el mecanismo que recorre el elemento 
+        */
+
+
+        const iterable = [1, 2, 3, 4, 5];
+        //const iterable = "Hola Mundo";
+        //const iterable = new Set([1, 2, 3, 3, 4, 5])];
+        //const iterable = new Map(["nombre", "ileana"], ["edad", 18]);
+
+        //Accedemos al iterador del iterable
+        const iterador = iterable [Symbol.iterator]();
+
+        console.log(iterable);
+
+        //Recorrer Iterable
+        /*
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        */
+
+       let next = iterador.next();
+
+       while(!next.done){
+           console.log(next.value);
+           next = iterador.next();
+       }
+    </script>
+</body>
+</html>
