@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de Características en Javascript</title>
+</head>
+<body>
+    
+
+
+    <script>
+        /* 
+        Proxies
+        
+        Nuevo mecanismo en Javascript que te permite crear un objeto basado en un objeto literal inicial
+        
+        No es más ni menos que un intermediario entre un programa y el objeto al cual queremos invocar un método o cambiar una propiedad
+
+        El proxy va a recibir el objeto literal, va a generar una copia y va a permitir que vos realices ciertas operaciones como validacion de propiedades 
+        */
+
+        const persona = {
+            nombre: "",
+            apellido: "",
+            edad: 0
+        }
+
+        //handler, en set podemos establecer todo tipo de validaciones
+        const manejador = {
+            set(obj, prop, valor){
+                //Si la propiedad no existe en el objeto original persona retorna un console.error y ya no lo asigna al objeto original 
+                if(Object.keys(obj).indexOf(prop) === -1){
+                    return console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+                }
+                //Validacion Nombre y Apellido
+                if(
+                    (prop === "nombre" || prop === "apellido") && !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜ\s]+$/g.test(valor))
+                ){
+                    return console.error(`LA propiedad ${prop} solo acepta letras y espacios en blanco`)
+                }
+                //Al objeto en la propiedad le asigno el valor
+                obj[prop] = valor;
+            }
+        }
+
+        const jon = new Proxy(persona, manejador);
+        //Asignar Propiedades
+        jon.nombre = "jon";
+        jon.apellido = "mircha";
+        jon.edad = 35;
+        //Generar una nueva propiedad
+        jon.twitter = "@jonmircha";
+        console.log(jon);
+        //Vinculacion entre la copia(jon) y el objeto original(persona)
+        console.log(persona);
+    </script>
+</body>
+</html>
