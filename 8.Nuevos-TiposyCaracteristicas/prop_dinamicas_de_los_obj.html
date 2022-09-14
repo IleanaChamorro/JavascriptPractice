@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Dinámicas de los objetos</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        /*Mecanismo nuevo para generar nombres de manera dinamica en un objeto
+        */
+
+
+        let aleatorio = Math.round(Math.random() * 100 + 5);
+        //Crear directamente dentro del objeto propiedades dinámicas
+       const objUsuarios = {
+            propiedad: "Valor",
+            [`id_${aleatorio}`]:"Valor Aleatorio"
+        };
+       console.log(objUsuarios);
+        const usuarios = ["Jon", "Irma", "Miguel", "Kala", "Kenai"]; 
+
+
+        //Por cada usuario se le genere al obj usuario, un id con su posicion 
+
+        usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+        console.log(objUsuarios);
+    </script>
+</body>
+</html>
