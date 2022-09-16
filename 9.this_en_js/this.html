@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This en Javascript</title>
+</head>
+<body>
+    <script>
+        /*This hace referencia al objeto en cuestión y se esa manera invocar objetos*/
+        
+        //en los navegadores this hace referencia al objeto window
+        console.log(this);
+
+        //Crear una variable al window
+        this.nombre = "Contexto Global";
+        console.log(this.nombre);
+
+        //Crear una funcion para imprimir la variable
+        function imprimir(){
+            console.log(this.nombre);
+        }
+
+        imprimir();
+
+        //Objeto 
+        const obj = {
+            nombre: "Contexto Objeto",
+            //esta funcion anonima fue creada dentro del contexto objeto
+            imprimir: function(){
+                console.log(this.nombre);
+            }
+        }
+
+        obj.imprimir();
+
+        const obj2 = {
+            nombre: "Contexto Objeto 2",
+            //Hace referencia a la funcion imprimir en el scope global
+            imprimir
+        }
+
+
+        obj2.imprimir();
+
+        //Que pasa si usamos this con arrow functions
+        const obj3 = {
+            nombre: "Contexto Objeto 3",
+            // la arrow function no maneja su propio scope, entonces lo agarra directamente del padre del objeto en el que ha sido creado
+            imprimir: () => {
+                console.log(this.nombre);
+            }
+        }
+        
+        obj3.imprimir(); //Contexto Global
+        
+        
+        function Persona(nombre) {
+            //that va a hacer referencia al this de la funcion constructora
+            const that = this;
+            that.nombre = nombre;
+            //Función constructora que crea su propio scope
+            //return console.log(this.nombre);
+            //this.nombre = nombre;
+            /*Esta funcion anonima crea un nuevo contexto, internamente esa funcion anonima no tiene ninguna propiedad nombre por lo cual se regresa y lee el this del contexto global en lugar de imprimir "Jon"
+            return function(){
+                console.log(this.nombre);
+            }
+            */
+           //return () => console.log(this.nombre);
+           return function(){
+               console.log(that.nombre);
+           }
+        }
+
+        let jon = new Persona("Jon");
+        jon();
+        </script>
+</body>
+</html>
