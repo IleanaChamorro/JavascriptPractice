@@ -49,3 +49,51 @@ console.log(document.querySelector(".card"));
 console.log(document.querySelectorAll(".card")[2]);
 console.log(document.querySelector("#menu li"));
 console.log(document.querySelectorAll("#menu li"))
+
+
+//Atributos
+//Maneras de mandarlos a llamar y establecer valores 
+console.log(document.documentElement.lang);
+console.log(document.documentElement.getAttribute("lang"));
+console.log(document.querySelector(".link-dom").href);
+//valor atributo href del enlace
+console.log(document.querySelector(".link-dom").getAttribute("href"));
+
+//Establecer valores a atributos
+document.documentElement.lang = "es";
+console.log(document.documentElement.lang);
+document.documentElement.setAttribute("lang", "es-Arg");
+console.log(document.documentElement.lang);
+
+//Guardar en variables elementos del DOM
+//Al crear variables que hacen referencia al elementos del html se anteponen un "$"
+const $linkDOM = document.querySelector(".link-dom");
+
+//Establecer valor
+$linkDOM.setAttribute("target", "_blank");
+//Establecer que no haya dependencia entre la ventana que abrimos y la ventana origen
+$linkDOM.setAttribute("rel", "noopener");
+$linkDOM.setAttribute("href", "https://youtube.com/jonmircha");
+console.log($linkDOM.hasAttribute("rel"));
+
+//Borrar Elementos
+$linkDOM.removeAttribute("rel");
+console.log($linkDOM.hasAttribute("rel"));
+
+//Data-Attributes
+//Obtener Data Attributes
+console.log($linkDOM.getAttribute("data-description"));
+//Todos los data-attributes los guarda a manera de un mapa/coleccion Javascript, llamado "dataset"
+console.log($linkDOM.dataset);
+//Modificar data-attribute
+console.log($linkDOM.dataset.description);
+//Establecer nuevos valores
+$linkDOM.setAttribute("data-description", "Modelo de Objeto del Documento");
+console.log($linkDOM.dataset.description);
+$linkDOM.dataset.description = "Suscribete a mi canal y comparte";
+console.log($linkDOM.dataset.description);
+//Validar atributos
+console.log($linkDOM.hasAttribute("data-id"));
+//Eliminar Atributos
+console.log($linkDOM.removeAttribute("data-id"));
+console.log($linkDOM.hasAttribute("data-id"));
