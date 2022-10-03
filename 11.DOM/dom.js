@@ -67,9 +67,9 @@ console.log(document.documentElement.lang);
 
 //Guardar en variables elementos del DOM
 //Al crear variables que hacen referencia al elementos del html se anteponen un "$"
-const $linkDOM = document.querySelector(".link-dom");
+//const $linkDOM = document.querySelector(".link-dom");
 
-//Establecer valor
+/*Establecer valor
 $linkDOM.setAttribute("target", "_blank");
 //Establecer que no haya dependencia entre la ventana que abrimos y la ventana origen
 $linkDOM.setAttribute("rel", "noopener");
@@ -97,3 +97,48 @@ console.log($linkDOM.hasAttribute("data-id"));
 //Eliminar Atributos
 console.log($linkDOM.removeAttribute("data-id"));
 console.log($linkDOM.hasAttribute("data-id"));
+*/
+
+//CSS
+const $linkDOM = document.querySelector(".link-dom");
+
+console.log($linkDOM.style);
+//Propiedades CSS dinámicas
+console.log($linkDOM.getAttribute("style"));
+console.log($linkDOM.style.backgroundColor);
+console.log(window.getComputedStyle($linkDOM));
+console.log(getComputedStyle($linkDOM).getPropertyValue("color"));
+//Establecer valores
+$linkDOM.style.setProperty("text-decoration", "none");
+$linkDOM.style.setProperty("display", "block");
+//Acceder con notación del punto
+$linkDOM.style.width = "50%";
+$linkDOM.style.textAlign = "center";
+$linkDOM.style.marginLeft = "auto";
+$linkDOM.style.marginRight = "auto";
+$linkDOM.style.padding = "1rem";
+$linkDOM.style.borderRadius = "5rem";
+
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute("style"));
+console.log(getComputedStyle($linkDOM));
+
+//Variables CSS - Custom Properties CSS
+const $html = document.documentElement,
+    $body = document.body;
+
+let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
+    varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+
+console.log(varDarkColor, varYellowColor);
+//Aplicar valores
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+
+//Modificar valores
+$html.style.setProperty("--dark-color", "pink");
+
+//Actualizar variables 
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+
+$body.style.setProperty("background-color", varDarkColor);
