@@ -99,7 +99,7 @@ console.log($linkDOM.removeAttribute("data-id"));
 console.log($linkDOM.hasAttribute("data-id"));
 */
 
-//CSS
+/*CSS
 const $linkDOM = document.querySelector(".link-dom");
 
 console.log($linkDOM.style);
@@ -136,9 +136,50 @@ $body.style.backgroundColor = varDarkColor;
 $body.style.color = varYellowColor;
 
 //Modificar valores
-$html.style.setProperty("--dark-color", "pink");
+$html.style.setProperty("--dark-color", "000");
 
 //Actualizar variables 
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 
 $body.style.setProperty("background-color", varDarkColor);
+*/
+
+//Clases CSS 
+const $card = document.querySelector(".card");
+
+console.log($card);
+console.log($card.className);
+
+//Acceder al valor del atributo class
+console.log($card.classList);
+
+//Evaluar si un elemento tiene una clase en particular
+console.log($card.classList.contains("rotate-45"));
+
+//Agregar Clases
+$card.classList.add("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+
+console.log($card.className);
+console.log($card.classList);
+
+//Eliminar clases 
+$card.classList.remove("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+
+//Método en el cual si el elemento tiene la clase se la quita, si no la tiene la agrega
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45")); //valida a true
+
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45")); //valida a false, ya que al tener la clase, "toggle" se la quita
+
+$card.classList.toggle("rotate-45");
+//Reemplazar una clase por otra
+$card.classList.replace("rotate-45", "rotate-135");
+//Agregar más de una clase
+$card.classList.add("opacity-80", "sepia");
+//Eliminar una más de una clase
+$card.classList.remove("opacity-80", "sepia");
+
+$card.classList.toggle("opacity-80", "sepia");
