@@ -185,7 +185,7 @@ $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia");
 */
 
-//DOM: Texto y HTML
+/*DOM: Texto y HTML
 const $whatIsDom = document.getElementById("que-es");
 
 let text = ` 
@@ -202,7 +202,7 @@ let text = `
     </p>
 ` 
 
-//Reemplazar texto
+/*Reemplazar texto
 //$whatIsDom.innerText = text;
 //Insertar solo texto
 $whatIsDom.textContent = text;
@@ -210,3 +210,29 @@ $whatIsDom.textContent = text;
 $whatIsDom.innerHTML = text;
 //Reemplazar elemento del DOM por contenido elegido
 $whatIsDom.outerHTML = text;
+*/
+
+//DOM: Traversing: Recorriendo el DOM
+//DOM Traversing enfocado a etiquetas html
+const $cards = document.querySelector(".cards");
+
+console.log($cards);
+//hijos
+console.log($cards.children);
+//console.log($cards.childNodes);
+console.log($cards.children[2]);
+//Nodo padre
+console.log($cards.parentElement);
+console.log($cards.parentNode);
+
+//Obtener el primer y último hijo
+console.log($cards.firstChild);
+console.log($cards.lastElementChild);
+//Anterior hermano en el nodo
+console.log($cards.previousSibling);
+//Siguiente hermano en el nodo
+console.log($cards.nextElementSibling);
+console.log($cards.nextElementSibling);
+//El selector más cercano
+console.log($cards.closest("div"));
+console.log($cards[3].closest("section"));
