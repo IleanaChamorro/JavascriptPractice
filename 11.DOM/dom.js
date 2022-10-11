@@ -212,7 +212,7 @@ $whatIsDom.innerHTML = text;
 $whatIsDom.outerHTML = text;
 */
 
-//DOM: Traversing: Recorriendo el DOM
+/*DOM: Traversing: Recorriendo el DOM
 //DOM Traversing enfocado a etiquetas html
 const $cards = document.querySelector(".cards");
 
@@ -236,3 +236,84 @@ console.log($cards.nextElementSibling);
 //El selector más cercano
 console.log($cards.closest("div"));
 console.log($cards[3].closest("section"));
+*/
+//DOM: Creando Elementos y Fragmentos 
+//crear elemento en el dom
+const $figure = document.createElement("figure"),
+    $img = document.createElement("img"),
+    $figcaption = document.createElement("figcaption"),
+    //nodos de texto
+    $figcaptionText = document.createTextNode("Animals")
+    //Capturar elemento padre
+    $cards = document.querySelector(".cards"),
+    $figure2 = document.createElement("figure");
+    ;
+
+$img.setAttribute("src", "https://placeimg.com/200/200/animals");
+$img.setAttribute("alt", "Animals");
+$figure.classList.add("card");
+
+//Incorporarlas al dom
+$figcaption.appendChild($figcaptionText);
+$figure.appendChild($img);
+$figure.appendChild($figcaption);
+$cards.appendChild($figure);
+
+//Agregar contenido dinámicamente
+$figure.innerHTML = `
+    <img src="https://placeimg.com/200/200/people" alt="People">
+    <figcaption>People</figcaption>
+`;
+
+$figure2.classList.add("card");
+$cards.appendChild($figure2);
+
+const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
+    $ul = document.createElement("ul")
+;
+
+document.write("<h3>Estaciones del año</h3>");
+document.body.appendChild($ul);
+
+estaciones.forEach(el => {
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $ul.appendChild($li);
+});
+
+const continentes = ["Africa", "América", "Asia", "Europa", "Oceanía"],
+$ul2 = document.createElement("ul");
+
+document.write("<h3>Continentes del Mundo</h3>");
+document.body.appendChild($ul2);
+ 
+//Por cada iteración le estas agregando nuevo contenido a la propiedad innerHTML
+$ul2.innerHTML = "";
+continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`));
+
+const meses = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+],
+    $ul3 = document.createElement("ul"),
+    $fragment = document.createDocumentFragment();
+
+meses.forEac((el) => {
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $fragment.appendChild($li);
+});
+
+document.write("<h3>Meses del año</h3>");
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3);
