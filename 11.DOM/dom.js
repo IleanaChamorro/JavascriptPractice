@@ -367,7 +367,7 @@ $cards.appendChild($fragment);
 */
 //De esta manera solo hacemos una inserción al DOM y no estamos interactuando con el a cada vez que recorre el for each las tarjetas*/
 
-//DOM:Modificando Elementos (Old Style)
+/*DOM:Modificando Elementos (Old Style)
 const $cards = document.querySelector(".cards"),
     $newCard = document.createElement("figure"),
     $cloneCards = $cards.cloneNode(true);
@@ -377,7 +377,7 @@ $newCard.innerHTML = `
     <figcaption>Any</figcaption>
 `;
 $newCard.classList.add("card");
-
+*/
 //Reemplazar card 
 //Como referencia nuestro nodo es el padre "card"
 //replaceChild necesita de dos parametros: el nuevo nodo y el nodo a reemplazar
@@ -394,3 +394,52 @@ $newCard.classList.add("card");
 
 //Clonar elementos
 //document.body.appendChild($cloneCards);
+
+//DOM:Modificando Elementos (Cool Style)
+/*
+.insertAdjacent...
+//Similar appendChild, insertBefore
+.insertAdjacentElement(position, el)
+//Similar innerHTML
+.insertAdjacentHTML(position, html)
+//Similar textContent
+.insertAdjacentText(position, text)
+
+Posiciones:
+beforebegin(hermano anterior)
+afterbegin(primer hijo)
+beforeend(ultimo hijo)
+afterend(hermano siguiente)
+*/
+
+const $cards = document.querySelector(".cards"),
+    $newCard = document.createElement("figure"),
+    $cloneCards = $cards.cloneNode(true);
+
+let $contentCard = `
+    <img src="https://placeimg.com/200/200/any" alt="Any">
+    <figcaption></figcaption>
+`;
+$newCard.classList.add("card");
+
+//Agregar car
+$newCard.insertAdjacentHTML("beforeend", $contentCard);
+//Agregar figC
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
+//$cards.insertAdjacentElement("afterbegin", $newCard);
+//Crear nuevo elemento
+/*$cards.insertAdjacentElement("beforebegin", $newCard);
+
+$cards.insertAdjacentElement("afterbegin", $newCard);
+$cards.insertAdjacentElement("afterend", $newCard);
+$cards.insertAdjacentElement("beforend", $newCard);
+*/
+
+//primer hijo
+$cards.prepend($newCard);
+//ultimo hijo
+$cards.append($newCard);
+//hermano anterior
+$cards.before($newCard);
+//hermano posterior
+$cards.after($newCard);
