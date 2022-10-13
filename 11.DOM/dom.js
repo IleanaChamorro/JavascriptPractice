@@ -9,7 +9,7 @@ console.log(window);
         hablar(texto);
 */
 
-console.log("*****************Elementos del Documento************");
+/*console.log("*****************Elementos del Documento************");
 console.log(window.document);
 console.log(document);
 //obtener head
@@ -248,11 +248,10 @@ const $figure = document.createElement("figure"),
     $cards = document.querySelector(".cards"),
     $figure2 = document.createElement("figure");
     ;
-
-$img.setAttribute("src", "https://placeimg.com/200/200/animals");
-$img.setAttribute("alt", "Animals");
-$figure.classList.add("card");
-
+    $img.setAttribute("src", "https://placeimg.com/200/200/animals");
+    $img.setAttribute("alt", "Animals");
+    $figure.classList.add("card");
+    
 //Incorporarlas al dom
 $figcaption.appendChild($figcaptionText);
 $figure.appendChild($img);
@@ -319,7 +318,7 @@ $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
 */
 //DOM: Templates HTML
-//Modelo a seguir en el cuál estructuras el contenido html que quieres que sea dinámico y también es una forma para interactual con el DOM
+/*Modelo a seguir en el cuál estructuras el contenido html que quieres que sea dinámico y también es una forma para interactual con el DOM
 
 const $cards = document.querySelector(".cards"),
 //Apunta al template y accede a su contenido
@@ -365,4 +364,33 @@ $cardContent.forEach(el => {
 //Agregar al elemento card el fragmento
 $cards.appendChild($fragment);
 
-//De esta manera solo hacemos una inserción al DOM y no estamos interactuando con el a cada vez que recorre el for each las tarjetas
+*/
+//De esta manera solo hacemos una inserción al DOM y no estamos interactuando con el a cada vez que recorre el for each las tarjetas*/
+
+//DOM:Modificando Elementos (Old Style)
+const $cards = document.querySelector(".cards"),
+    $newCard = document.createElement("figure"),
+    $cloneCards = $cards.cloneNode(true);
+
+$newCard.innerHTML = `
+    <img src="https://placeimg.com/200/200/any" alt="Any">
+    <figcaption>Any</figcaption>
+`;
+$newCard.classList.add("card");
+
+//Reemplazar card 
+//Como referencia nuestro nodo es el padre "card"
+//replaceChild necesita de dos parametros: el nuevo nodo y el nodo a reemplazar
+//Accedemos a los children de card mediante DOM traversing, en este caso accedemos a la tercer tarjeta
+//$cards.replaceChild($newCard, $cards.children[2]);
+
+//Eliminar elementos
+//$cards.removeChild($cards.lastElementChild);
+
+//Insertar tarjeta antes de un nodo que tomemos como referencia 
+
+//InsertBefore necesita dos elementos: el nuevo nodo y el nodo de referencia (no lo reemplaza, simplemente toma como referencia ese nodo hijo y va a insertar el nuevo antes que ese)
+//$cards.insertBefore($newCard, $cards.firstElementChild);
+
+//Clonar elementos
+//document.body.appendChild($cloneCards);
