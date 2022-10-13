@@ -238,7 +238,7 @@ console.log($cards.closest("div"));
 console.log($cards[3].closest("section"));
 */
 //DOM: Creando Elementos y Fragmentos 
-//crear elemento en el dom
+/*crear elemento en el dom
 const $figure = document.createElement("figure"),
     $img = document.createElement("img"),
     $figcaption = document.createElement("figcaption"),
@@ -317,3 +317,52 @@ meses.forEac((el) => {
 document.write("<h3>Meses del año</h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
+*/
+//DOM: Templates HTML
+//Modelo a seguir en el cuál estructuras el contenido html que quieres que sea dinámico y también es una forma para interactual con el DOM
+
+const $cards = document.querySelector(".cards"),
+//Apunta al template y accede a su contenido
+    $template = document.getElementById("template-card").content,
+    $fragment = document.createDocumentFragment,
+    $cardContent = [
+        {
+            title: "Tecnologia",
+            img : "https://placeimg.com/200/200/tech",
+        },
+        {
+            title: "Animales",
+            img : "https://placeimg.com/200/200/animals",
+        },
+        {
+            title: "Arquitectura",
+            img : "https://placeimg.com/200/200/arch",
+        },
+        {
+            title: "Gente",
+            img : "https://placeimg.com/200/200/people",
+        },
+        {
+            title: "Naturaleza",
+            img : "https://placeimg.com/200/200/nature",
+        },
+    ]
+;
+
+//Por cada elemento de "cardContent", agregar imagen y titulo
+$cardContent.forEach(el => {
+    $template.querySelector("img").setAttribbute("src", el.img);
+    $template.querySelector("img").setAttribbute("alt", el.title);
+    $template.querySelector("figcaption").textContent = el.title;
+
+    //Clonar dicho nodo (su estructura), asignarle atributos y contenidos textual
+    let $clone = document.importNode($template, true); //con el boolean en true clona el nodo
+
+    //Agregar al fragmento el clon nodo
+    $fragment.appendChild($clone);
+})
+
+//Agregar al elemento card el fragmento
+$cards.appendChild($fragment);
+
+//De esta manera solo hacemos una inserción al DOM y no estamos interactuando con el a cada vez que recorre el for each las tarjetas
