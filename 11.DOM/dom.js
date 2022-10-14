@@ -443,3 +443,46 @@ $cards.append($newCard);
 $cards.before($newCard);
 //hermano posterior
 $cards.after($newCard);
+
+//DOM: Manejadores de Eventos
+function holaMundo(){
+    //Cuando una función se convierte en un manejador de evento
+    alert("Hola Mundo");
+    console.log(event);
+}
+
+//evento semantico
+const $eventoSemantico = document.getElementById("evento-semantico");
+
+//Ejecutar esta función como evento semántico
+$eventoSemantico.onclick = holaMundo;
+
+//Las limitantes que tienen los eventos semanticos es que una vez que esta definido el evento semantico solamente va a poder ejecutar una función
+
+//Evento semantico con funcion anonima
+
+//Toda función que se convierte en manejador de eventos no puede recibir parámetros, el único parámetro que recibe es el evento en sí
+$eventoSemantico.onclick = function(e){
+    alert("Hola Mundo Manejador de Eventos Semánticos");
+    console.log(e);
+    console.log(event);
+}
+
+
+//Evento Múltiple => Ejecutar varias funciones que se hayan definido en distintos manejadores al mismo evento
+const $eventoMultiple = document.getElementById("evento-multiple")
+
+//Declarar un evento múltiple
+//recibe dos parámetros: el evento y la función a ejecutar
+$eventoMultiple.addEventListener("click", holaMundo);
+console.log($eventoMultiple);
+
+//Evento Múltiple declarado con función anónima
+$eventoMultiple.addEventListener("click", (e) => {
+    alert("Hola Mundo Manejador de Eventos Múltiple");
+    console.log(e);
+    //tipo de evento
+    console.log(e.type);
+    //evento que lo origina
+    console.log(e.target);
+});
