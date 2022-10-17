@@ -486,3 +486,36 @@ $eventoMultiple.addEventListener("click", (e) => {
     //evento que lo origina
     console.log(e.target);
 });
+
+//DOM: Eventos con Parámetros y Remover Eventos
+function saludar(nombre = "Desconocid@"){
+    alert(`Hola ${nombre}`);
+    console.log(event);
+}
+
+//$eventoMultiple.addEventListener("click", saludar);
+
+/*La solución antes de las arrow functions era crear una funcion anonima la cual iba a ser la manejadora de eventos y ejecutarla inmediatamente
+$eventoMultiple.addEventListener("click", function(){
+    saludar()
+});
+*/
+//Saludar ya no es la función manejadora del evento, por lo cual forzosamente si hay que poner los parentesís
+$eventoMultiple.addEventListener("click", () => {
+    saludar();
+    saludar("Ileana");
+});
+
+//Eliminar eventos de un elemento
+const $eventoRemover = document.getElementById("evento-remover");
+
+const removerDobleClick = () => {
+    alert(`Removiendo el evento de tipo ${e.type}`);
+    console.log(e);
+    $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+    $eventoRemover.disabled = true;
+}
+//RemoverEventListener necesita de dos parámetros: evento a remover y la funcion manejadora asociada a ese evento
+$eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+//Para remover un evento está tiene que estar guardada en una función(declarada o expresada)
