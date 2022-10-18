@@ -26,3 +26,20 @@
 .sepia{
     filter: sepia(1);
 }
+
+/*Eventos Flujo*/
+.eventos-flujo div{
+    padding: 4rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.uno{
+    background-color: yellow;
+}
+.dos{
+    background-color: gold;
+}
+.tres{
+    background-color : lightyellow;
+}

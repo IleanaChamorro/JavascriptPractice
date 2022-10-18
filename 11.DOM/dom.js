@@ -411,7 +411,7 @@ afterbegin(primer hijo)
 beforeend(ultimo hijo)
 afterend(hermano siguiente)
 */
-
+/*
 const $cards = document.querySelector(".cards"),
     $newCard = document.createElement("figure"),
     $cloneCards = $cards.cloneNode(true);
@@ -434,7 +434,7 @@ $cards.insertAdjacentElement("afterbegin", $newCard);
 $cards.insertAdjacentElement("afterend", $newCard);
 $cards.insertAdjacentElement("beforend", $newCard);
 */
-
+/*
 //primer hijo
 $cards.prepend($newCard);
 //ultimo hijo
@@ -500,6 +500,7 @@ $eventoMultiple.addEventListener("click", function(){
     saludar()
 });
 */
+/*
 //Saludar ya no es la función manejadora del evento, por lo cual forzosamente si hay que poner los parentesís
 $eventoMultiple.addEventListener("click", () => {
     saludar();
@@ -519,3 +520,35 @@ const removerDobleClick = () => {
 $eventoRemover.addEventListener("dblclick", removerDobleClick);
 
 //Para remover un evento está tiene que estar guardada en una función(declarada o expresada)
+*/
+
+//DOM: Flujo de Eventos (Burbuja y Captura)
+//Como se va propagando el evento, una vez que el evento se origina tiene una propagación a lo largo del arbol del DOM, por defecto esa propagación se va dando desde el evento más interno al más externo esta fase es llamada "BURBUJA" 
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+
+console.log($divsEventos);
+
+function flujoEventos(e){
+    //this en este caso hace referencia al div en cuestión
+    console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+}
+//asignar listener de manera dinámica
+$divsEventos.forEach(div => {
+    //Fase de burbuja
+    //div.addEventListener("click", flujoEventos, false);
+    //div.addEventListener("click", flujoEventos, false);
+    //Fase de captura
+    //div.addEventListener("click", flujoEventos, true);
+    div.addEventListener("click", flujoEventos, {
+        //hace referencia a la fase en la que se encuentra
+        capture: false,
+        //Hace referencia a que el evento se va a ejecutar una sola vez
+        once: true,
+    });
+});
+
+//Los tres elementos tienen asignado el evento click por lo cual podemos ver la propagación del evento
+
+//Fase Captura: Desde el más externo al más interno 
+//Esta fase se puede omitir si delegas los eventos a un evento padre más externo  
