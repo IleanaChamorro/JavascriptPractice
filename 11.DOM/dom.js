@@ -525,30 +525,46 @@ $eventoRemover.addEventListener("dblclick", removerDobleClick);
 //DOM: Flujo de Eventos (Burbuja y Captura)
 //Como se va propagando el evento, una vez que el evento se origina tiene una propagación a lo largo del arbol del DOM, por defecto esa propagación se va dando desde el evento más interno al más externo esta fase es llamada "BURBUJA" 
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+    $linkEventos = document.querySelector(".eventos-flujo a")
+;
 
 console.log($divsEventos);
 
 function flujoEventos(e){
     //this en este caso hace referencia al div en cuestión
     console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+    //Eliminar propagación
+    e.stopPropagation();
 }
 //asignar listener de manera dinámica
 $divsEventos.forEach(div => {
     //Fase de burbuja
-    //div.addEventListener("click", flujoEventos, false);
+    div.addEventListener("click", flujoEventos, false);
     //div.addEventListener("click", flujoEventos, false);
     //Fase de captura
     //div.addEventListener("click", flujoEventos, true);
-    div.addEventListener("click", flujoEventos, {
+    /*div.addEventListener("click", flujoEventos, {
         //hace referencia a la fase en la que se encuentra
         capture: false,
-        //Hace referencia a que el evento se va a ejecutar una sola vez
+        //Hace referencia a que el evento se va a ejecutar una sola vez 
         once: true,
-    });
+    });*/
 });
 
 //Los tres elementos tienen asignado el evento click por lo cual podemos ver la propagación del evento
 
 //Fase Captura: Desde el más externo al más interno 
 //Esta fase se puede omitir si delegas los eventos a un evento padre más externo  
+
+//stopPropagation
+//si el evento esta en etapa de captura, desde donde se ejecuta la programación es desde el "uno"
+
+//preventDefault
+
+$linkEventos.addEventListener("click", (e) => {
+    alert("Hola soy tu amigo y docente digital...Jonathan Mircha");
+    //cancelar la solicitud por defecto
+    e.preventDefault();
+    e.stopPropagation();
+});
