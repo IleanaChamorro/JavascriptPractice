@@ -26,3 +26,40 @@ $linkEventos.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 */
+
+//BOM: Browser Object Model
+//Serie de métodos y objetos que cuelgan directamente de window
+window.addEventListener("resize", (e) => {
+    console.clear();
+    console.log("********Evento Resize ********");
+    console.log(window.innerWidth); //Tamaño del ancho del viewport de nuestra ventana
+    console.log(window.innerHeight);
+    console.log(window.outerHeight);
+    console.log(window.outerWidth);
+    console.log(e);
+});
+
+//control desplazamiento scroll
+
+window.addEventListener("scroll", e => {
+    console.clear();
+    console.log("****** Evento Scroll *******");
+    console.log(window.scrollY);
+    console.log(window.scrollX);
+    console.log(e);
+})
+
+window.addEventListener("load", e => {
+    console.log("****** Evento Scroll *******");
+    console.log(window.scrollY);
+    console.log(window.scrollX);
+    console.log(e);
+})
+
+document.addEventListener("DOMContentLoaded", e => {
+    console.clear();
+    console.log("********* Evento DOMContentLoaded ******");
+    console.log(window.screenY);
+    console.log(window.screenX);
+    console.log(e);
+})
