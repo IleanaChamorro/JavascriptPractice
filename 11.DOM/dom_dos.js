@@ -1,3 +1,4 @@
+/*
 function flujoEventos(e){
     console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
     
@@ -29,6 +30,7 @@ $linkEventos.addEventListener("click", (e) => {
 
 //BOM: Browser Object Model
 //Serie de métodos y objetos que cuelgan directamente de window
+/*
 window.addEventListener("resize", (e) => {
     console.clear();
     console.log("********Evento Resize ********");
@@ -63,3 +65,30 @@ document.addEventListener("DOMContentLoaded", e => {
     console.log(window.screenX);
     console.log(e);
 })
+*/
+
+//BOM: Métodos
+//window.alert("Alerta");
+//window.confirm("Confirmación");
+//window.propmt("Aviso")
+
+//Todo lo que cuelga de window, directamente mandar la alerta, confirmación o aviso
+
+const $btnAbrir = document.getElementById("abrir-ventana"),
+$btnCerrar = document.getElementById("cerrar-ventana"),
+$btnImprimir = document.getElementById("imprimir-ventana")
+;
+
+let ventana;
+
+$btnAbrir.addEventListener("click", e => {
+    ventana = window.open("https://jonmircha.com");
+});
+$btnCerrar.addEventListener("click", e => {
+    //Se cierra la ventana ejecutada
+    //window.close();
+    ventana.close();
+});
+$btnImprimir.addEventListener("click", e => {
+    window.print();
+});
