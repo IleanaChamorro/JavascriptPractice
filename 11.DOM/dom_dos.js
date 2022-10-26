@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 //Todo lo que cuelga de window, directamente mandar la alerta, confirmación o aviso
 
+/*
 const $btnAbrir = document.getElementById("abrir-ventana"),
 $btnCerrar = document.getElementById("cerrar-ventana"),
 $btnImprimir = document.getElementById("imprimir-ventana")
@@ -92,3 +93,35 @@ $btnCerrar.addEventListener("click", e => {
 $btnImprimir.addEventListener("click", e => {
     window.print();
 });
+*/
+
+//BOM: Objetos: Url, Historial y Navegador
+console.log("********* Objeto URL (location) *********");
+console.log(location);
+console.log(location.origin); //la ruta de la cual se origina
+console.log(location.protocol);
+console.log(location.host);
+console.log(location.hostname);
+console.log(location.port);
+console.log(location.href);
+console.log(location.hash);
+console.log(location.search);
+console.log(location.pathname);
+//location.reload();
+
+console.log("********* Objeto Historial (history) ***********");
+console.log(history);
+console.log(history.length); //cuántas páginas hemos visitado
+//navegar entre páginas
+//console.log(history.back(3));
+//ir hacia adelante entre páginas
+console.log(history.forward(3));
+//console.log(history.go(3));
+
+console.log("****** Objeto Navegador (Navigator) *********");
+console.log(navigator);
+console.log(navigator.connection);
+console.log(navigator.geolocation);
+console.log(navigator.mediaDevices);
+console.log(navigator.mimeTypes);
+console.log(navigator.onLine);
