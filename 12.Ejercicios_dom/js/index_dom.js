@@ -1,7 +1,8 @@
-import hamburgerMenu from "./js/script.js";
-
+import hamburgerMenu from "../dom/script.js";
+import { digitalClock, alarm } from "../dom/reloj.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded", (e) => {
     hamburgerMenu(".panel-btn", ".panel", ".menu a");
+    digitalClock("#reloj", "#activar-reloj", "#desactivar-reloj");
 });
