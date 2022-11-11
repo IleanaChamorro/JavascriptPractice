@@ -10,7 +10,7 @@ export default function countdown(id, limitDate, finalMessage){
         let now = new Date().getTime(),
         limitTime = countdownDate - now,
         days = Math.floor(limitTime / (1000 * 60 * 60 * 24)),
-        hours = (limitTime % (1000 * 60 * 60 * 24) )/ (1000 * 60 * 60),
+        hours = "0" + Math.floor((limitTime % (1000 * 60 * 60 * 24) )/ (1000 * 60 * 60)),
         minutes,
         seconds;
 
