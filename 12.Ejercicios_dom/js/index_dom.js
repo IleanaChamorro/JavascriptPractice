@@ -12,10 +12,10 @@ d.addEventListener("DOMContentLoaded", (e) => {
     alarm("assets/car-alarm.mp3", "#activar-alarma", "#desactivar-alarma");
     countdown("countdown", "Nov 13, 2023 00:00:00", "Feliz Cumpleaños 🤓🤓");
     scrollTopButton(".scroll-top-btn");
-    darkTheme(".dark-theme-btn", "dark-mode");
 });
 
 d.addEventListener("keydown", (e) => {
     shortcuts(e);
     moveBall(e , ".ball", ".stage");
 })
+darkTheme(".dark-theme-btn", "dark-mode");
