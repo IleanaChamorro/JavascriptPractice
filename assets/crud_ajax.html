@@ -76,7 +76,7 @@
             });
 
             xhr.open(method || "GET", url);
-            xhr.setRequestHeader("Content-type", "application/json charset=utf-8");
+            xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
             xhr.send(JSON.stringify(data));
         }
 
@@ -107,7 +107,65 @@
                 data: null
             })
         }
-        d.addEventListener("DOMContentLoaded", getAll)
+        d.addEventListener("DOMContentLoaded", getAll);
+
+        d.addEventListener("submit", e => {
+            if(e.target === $form){
+                e.preventDefault();
+
+
+                //en caso de no existir el valor
+                if(!e.target.id.value){
+                    //Create - POST
+                    ajax({
+                        url: "http://localhost:5555/jugadores",
+                        method: "POST",
+                        success: (res) => location.reload(),
+                        error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
+                        data: {
+                        nombre: e.target.nombre.value,
+                        posicion: e.target.posicion.value
+                        }
+                    });
+                }else{
+                    //Update - PUT
+                    ajax({
+                        url: `http://localhost:5555/jugadores/${e.target.id.value}`,
+                        method: "PUT",
+                        success: (res) => location.reload(),
+                        error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
+                        data: {
+                        nombre: e.target.nombre.value,
+                        posicion: e.target.posicion.value
+                        }
+                    });
+                }
+            }
+        });
+
+        //Edit
+        d.addEventListener("click", e => {
+            if(e.target.matches(".edit")){
+                $title.textContent = "Editar Jugador";
+                $form.nombre.value = e.target.dataset.nombre;
+                $form.posicion.value = e.target.dataset.posicion;
+                $form.id.value = e.target.dataset.id;
+            }
+            if(e.target.matches(".delete")){
+                let isDelete = confirm(`¿Estás seguro de eliminar el id ${e.target.dataset.id}?`)
+            
+            if(isDelete){
+                //DELETE
+                ajax({
+                        url: `http://localhost:5555/jugadores/${e.target.dataset.id}`,
+                        method: "DELETE",
+                        success: (res) => location.reload(),
+                        error: () => alert(err)
+                    
+                    });
+                }
+            }
+        })
     </script>
 </body>
 </html>

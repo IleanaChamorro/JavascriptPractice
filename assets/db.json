@@ -1,136 +1,136 @@
 {
-    "jugadores":[
-        {
-            "id": 1,
-            "nombre": "E. Martinez",
-            "posición": "Arquero"
-        },
-        {
-            "id": 2,
-            "nombre": "Molina",
-            "posición": "Defensa"
-        },
-        {
-            "id": 3,
-            "nombre": "Romero",
-            "posición": "Defensa"
-        },
-        {
-            "id": 4,
-            "nombre": "Otamendi",
-            "posición": "Central"
-        },
-        {
-            "id": 5,
-            "nombre": "Tagliafico",
-            "posición": "Central"
-        },
-        {
-            "id": 6,
-            "nombre": "De Paul",
-            "posición": "Mediocampista"
-        },
-        {
-            "id": 7,
-            "nombre": "Fernández",
-            "posición": "Mediocampista"
-        },
-        {
-            "id": 8,
-            "nombre": "Mac Allister",
-            "posición": "Mediocampista"
-        },
-        {
-            "id": 9,
-            "nombre": "Alvarez",
-            "posición": "Delantero"
-        },
-        {
-            "id": 10,
-            "nombre": "Messi",
-            "posición": "Delantero"
-        },
-        {
-            "id": 11,
-            "nombre": "Di María",
-            "posición": "Delantero"
-        }
-    ],
-    "suplentes":[
-        {
-            "id": 1,
-            "nombre": "F. Armani",
-            "posicion": "Arquero"
-        },
-        {
-            "id": 2,
-            "nombre": "Rulli",
-            "posicion": "Arquero"
-        },
-        {
-            "id": 3,
-            "nombre": "Montiel",
-            "posicion": "Defensor"
-        },
-        {
-            "id": 4,
-            "nombre": "Foyth",
-            "posicion": "Defensa"
-        },
-        {
-            "id": 5,
-            "nombre": "Paredes",
-            "posicion": "Mediocampista"
-        },
-        {
-            "id": 6,
-            "nombre": "Pezzela",
-            "posicion": "Mediocampista"
-        },
-        {
-            "id": 7,
-            "nombre": "Acuña",
-            "posicion": "Lateral"
-        },
-        {
-            "id": 8,
-            "nombre": "Palacios",
-            "posicion": "Mediocampista"
-        },
-        {
-            "id": 9,
-            "nombre": "Correa",
-            "posicion": "Delantero"
-        },
-        {
-            "id": 10,
-            "nombre": "Almada",
-            "posicion": "Mediocampista"
-        },
-        {
-            "id": 11,
-            "nombre": "Gomez",
-            "posicion": "Lateral"
-        },
-        {
-            "id": 12,
-            "nombre": "Rodriguez",
-            "posicion": "Lateral"
-        },
-        {
-            "id": 13,
-            "nombre": "Dybala",
-            "posicion": "Delantero"
-        },
-        {
-            "id": 14,
-            "nombre": "Delantero",
-            "posicion": "L. Martinez"
-        },
-        {
-            "id": 15,
-            "nombre": "Li. Martinez",
-            "posicion": "Defensa"
-        }
-    ]
+  "jugadores": [
+    {
+      "id": 2,
+      "nombre": "Molina",
+      "posicion": "Defensa"
+    },
+    {
+      "id": 3,
+      "nombre": "Romero",
+      "posicion": "Defensa"
+    },
+    {
+      "id": 4,
+      "nombre": "Otamendi",
+      "posicion": "Central"
+    },
+    {
+      "id": 5,
+      "nombre": "Tagliafico",
+      "posicion": "Central"
+    },
+    {
+      "id": 6,
+      "nombre": "De Paul",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 7,
+      "nombre": "Fernández",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 8,
+      "nombre": "Mac Allister",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 9,
+      "nombre": "Alvarez",
+      "posicion": "Delantero"
+    },
+    {
+      "id": 10,
+      "nombre": "Messi",
+      "posicion": "Delantero"
+    },
+    {
+      "id": 11,
+      "nombre": "Di María",
+      "posicion": "Delantero"
+    },
+    {
+      "nombre": "E. Martinez",
+      "posicion": "Arquero",
+      "id": 12
+    }
+  ],
+  "suplentes": [
+    {
+      "id": 1,
+      "nombre": "F. Armani",
+      "posicion": "Arquero"
+    },
+    {
+      "id": 2,
+      "nombre": "Rulli",
+      "posicion": "Arquero"
+    },
+    {
+      "id": 3,
+      "nombre": "Montiel",
+      "posicion": "Defensor"
+    },
+    {
+      "id": 4,
+      "nombre": "Foyth",
+      "posicion": "Defensa"
+    },
+    {
+      "id": 5,
+      "nombre": "Paredes",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 6,
+      "nombre": "Pezzela",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 7,
+      "nombre": "Acuña",
+      "posicion": "Lateral"
+    },
+    {
+      "id": 8,
+      "nombre": "Palacios",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 9,
+      "nombre": "Correa",
+      "posicion": "Delantero"
+    },
+    {
+      "id": 10,
+      "nombre": "Almada",
+      "posicion": "Mediocampista"
+    },
+    {
+      "id": 11,
+      "nombre": "Gomez",
+      "posicion": "Lateral"
+    },
+    {
+      "id": 12,
+      "nombre": "Rodriguez",
+      "posicion": "Lateral"
+    },
+    {
+      "id": 13,
+      "nombre": "Dybala",
+      "posicion": "Delantero"
+    },
+    {
+      "id": 14,
+      "nombre": "Delantero",
+      "posicion": "L. Martinez"
+    },
+    {
+      "id": 15,
+      "nombre": "Li. Martinez",
+      "posicion": "Defensa"
+    }
+  ]
 }
