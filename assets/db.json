@@ -1,11 +1,6 @@
 {
   "jugadores": [
     {
-      "id": 2,
-      "nombre": "Molina",
-      "posicion": "Defensa"
-    },
-    {
       "id": 3,
       "nombre": "Romero",
       "posicion": "Defensa"
