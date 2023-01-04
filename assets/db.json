@@ -1,11 +1,6 @@
 {
   "jugadores": [
     {
-      "id": 3,
-      "nombre": "Romero",
-      "posicion": "Defensa"
-    },
-    {
       "id": 4,
       "nombre": "Otamendi",
       "posicion": "Central"
