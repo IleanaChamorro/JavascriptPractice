@@ -1,4 +1,4 @@
-export function PostCard(props){
+export default function PostCard(props){
     let { date, title , slug, _embedded} = props;
     let dateFormat = new Date(date).toLocaleString();
     let urlPoster = _embedded["wp:featuredmedia"]

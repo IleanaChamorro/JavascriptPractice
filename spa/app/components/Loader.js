@@ -1,6 +1,6 @@
 export function Loader(){
     const $loader = document.createElement("img");
-    $loader.src="app/assets/icons8-loading-sign-24.png";
+    $loader.src="app/assets/Rolling-1s-200px.svg";
     $loader.alt = "Cargando...";
     $loader.classList.add("loader");
     return $loader;
